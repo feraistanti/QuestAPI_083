@@ -35,3 +35,10 @@ fun HostNavigasi(
                 },
                 modifier = modifier)
         }
+        composable(DestinasiEntry.route){
+            EntrySiswaScreen(navigateBack = {
+                navController.navigate(DestinasiHome.route)
+            })
+        }
+    }
+}
