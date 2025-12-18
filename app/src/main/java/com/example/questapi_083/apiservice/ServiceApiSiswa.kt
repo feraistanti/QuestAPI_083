@@ -12,4 +12,5 @@ interface ServiceApiSiswa {
 
     @POST("insertTM.php")
     suspend fun postSiswa(@Body dataSiswa: DataSiswa): retrofit2.Response<Void>
+
 }
