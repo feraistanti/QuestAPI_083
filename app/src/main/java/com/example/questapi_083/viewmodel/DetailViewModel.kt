@@ -34,3 +34,27 @@ class DetailViewModel(
         getSatuSiswa()
     }
 
+    fun getSatuSiswa() {
+        viewModelScope.launch {
+            statusUIDetail = StatusUIDetail.Loading
+            statusUIDetail = try {
+                StatusUIDetail.Success(satusiswa = repositoriDataSiswa.getSatuSiswa(idSiswa))
+            } catch (e: IOException) {
+                StatusUIDetail.Error
+            } catch (e: HttpException) {
+                StatusUIDetail.Error
+            }
+        }
+    }
+
+    @SuppressLint("SuspiciousIndentation")
+    suspend fun hapusSatuSiswa() {
+        val resp: Response<Void> = repositoriDataSiswa.hapusSatuSiswa(idSiswa)
+
+        if (resp.isSuccessful) {
+            println("Sukses Hapus Data : ${resp.message()}")
+        } else {
+            println("Gagal Hapus Data : ${resp.errorBody()}")
+        }
+    }
+}
