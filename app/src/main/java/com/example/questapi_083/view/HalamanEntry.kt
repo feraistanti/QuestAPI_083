@@ -26,12 +26,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.questapi_083.R
-import com.example.questapi_083.uicontroller.route.DestinasiEntry
 import com.example.questapi_083.modeldata.DetailSiswa
-import com.example.questapi_083.viewmodel.EntryViewModel
 import com.example.questapi_083.modeldata.UIStateSiswa
+import com.example.questapi_083.uicontroller.route.DestinasiEntry
+import com.example.questapi_083.viewmodel.EntryViewModel
 import com.example.questapi_083.viewmodel.provider.PenyediaViewModel
-
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
